@@ -1,14 +1,13 @@
 ########################################################################################
 # The car classes definition json file.
 #
-# This is still WIP, but the format is pretty straightforward. A car class will
-# inherit the defaults values for things if they're not specified. 
+# The format is pretty straightforward. A car class will
+# inherit the default values for things if they're not specified. 
 #
 # The valid params are:
 # {
-#    "carClassEnum": this is the built-in car class group (see complete list below). It must match on of these built in types.
+#    "carClassEnum": this is the built-in car class group (defined in CarData.cs). It must match on of these built in types.
 #    "pCarsClassNames": this is a comma (,) separated array of pCars classnames. * or ? denote wildcards. The app searches for classes which have full matches before considering wildcards
-#    "rf2ClassNames": as above, for rFactor2
 #    "rf2ClassNames": as above, for rFactor2
 #    "lmuClassNames": as above, for Le Mans Unlimited
 #    "gtr2ClassNames": as above, for GTR2
@@ -16,7 +15,7 @@
 #    "acClassNames": as above, for Assetto Corsa
 #    "raceroomClassIds": this is an array of integers or R3E class IDs  
 #    "iracingCarIds": this is an array of integers or iRacing car IDs. Consult https://members-ng.iracing.com/data/car/get for more details.
-#    "brakeType": can be "Carbon", "Ceramic", "Iron_Race" or "Iron_Road"
+#    "brakeType": can be "Carbon", "Ceramic", "Iron_Race" or "Iron_Road" (defined in CarData.cs)
 #    "maxColdBrakeTemp": used to override cold brake temperature (celsius) upper threshold.  Specifies max temperature at which brakes are still considered cold.  If not specified, comes from the built in brakeType.
 #    "maxWarmBrakeTemp": used to override warm (ok) brake temperature (celsius) upper threshold.  Specifies max temperature at which brakes are still considered warm/ok.  Above that value, brakes are overheating.  If not specified, comes from the built in brakeType.
 #    "maxHotBrakeTemp":  used to override hot brake temperature (celsius) upper threshold.  Specifies max temperature at which brake are still considered hot.  Above that value, brakes are "cooking".  If not specified, comes from the built in brakeType.
@@ -100,7 +99,7 @@
 #        maxHotCarbonBrakeTemp: 1500
 #
 #
-# Crew Chief built-in car classes are defined in the CarData.cs source code and change with each release.
+# Crew Chief built-in car classes are defined in the CarData.cs source code and may change with each release.
 #
 # Car classes can skip an entry if they're using the default - e.g. most cars
 # skip defaultTyreType so they use Unknown_Race - this is only overridden in
@@ -168,6 +167,7 @@
       "raceroomClassIds": [ 8600 ],
       "pCarsClassNames": [ "*GTE*" ],
       "rf2ClassNames": [ "*GTE*", "URD_EGT_Darche", "URD_EGT_AM", "URD_EGT_Bayro", "URD_EGT_Ferruccio", "URD_EGT_Venom", "URD_EGT_C7R" ],
+			"lmuClassNames": [ "GTE" ],
       "acClassNames": [ "ks_lamborghini_huracan_st", "ks_glickenhaus_scg003", "*GTE*", "urd_bayro_egt_2018", "urd_detroit_egt_2018", "urd_detroit_egt_2018_LM", "ks_porsche_911_rsr*", "ks_corvette_c7r" ],
       "iracingCarIds": [ 92, 93, 102, 109, 127 ],
       "ams2ClassNames": [ "GTE" ],
@@ -192,9 +192,10 @@
       "raceroomClassIds": [ 1703, 2922, 3375, 4516, 7278, 7767, 10396, 10786, 10049, 11566, 10917, 12196, 12770 ],
       "pCarsClassNames": [ "GT3" ],
       "rf2ClassNames": [ "*GT3*" ],
+			"lmuClassNames": [ "GT3" ],
       "ams2ClassNames": [ "GT3" ],
       "acClassNames": [ "ks_audi_r8_lms*", "*GT3*" ],
-      "iracingCarIds": [ 43, 55, 59, 72, 73, 94, 132, 133, 137, 144, 156, 169, 173, 176, 184, 185, 188, 194 ],
+			"iracingCarIds": [ 43, 55, 59, 72, 73, 94, 132, 133, 137, 144, 156, 169, 173, 176, 184, 185, 188, 194, 206 ],
       "timesInHundredths": true,
       "enabledMessageTypes": "ALL",
       "maxSafeOilTemp": 135,
@@ -238,7 +239,7 @@
       "rf2ClassNames": [ "*GT4*" ],
       "acClassNames": [ "*GT4*", "ks_bmw_m235i_racing", "lotus_evora_gx", "ginetta_g55" ],
       "ams2ClassNames": [ "GT4" ],
-      "iracingCarIds": [ 119, 122, 135, 150, 157, 189 ],
+			"iracingCarIds": [ 119, 122, 135, 150, 157, 189, 204 ],
       "timesInHundredths": true,
       "enabledMessageTypes": "ALL",
       "allMembersAreRWD": true,
@@ -394,13 +395,15 @@
       "raceroomClassIds": [ 1923 ],
       "pCarsClassNames": [ "LMP2" ],
       "rf2ClassNames": [ "LMP2", "ES_P2" ],
+			"lmuClassNames": [ "LMP2" ],
       "ams2ClassNames": [ "P2", "DPI" ],
       "acClassNames": [ "Oreca_07*" ],
       "iracingCarIds": [ 39, 70, 128 ],
       "brakeType": "Ceramic",
       "timesInHundredths": true,
       "enabledMessageTypes": "ALL",
-      "maxSafeOilTemp": 135
+			"maxSafeOilTemp": 135,
+			"allMembersAreRWD": true
     },
     {
       /**R3E-Index: 78**/
@@ -414,7 +417,8 @@
       "iracingCarIds": [ 165 ],
       "brakeType": "Ceramic",
       "timesInHundredths": true,
-      "enabledMessageTypes": "ALL"
+			"enabledMessageTypes": "ALL",
+			"allMembersAreRWD": true
     },
     {
       "carClassEnum": "LMP900",
@@ -1113,7 +1117,8 @@
       "carClassEnum": "HYPER_CAR_RACE",
       "raceroomClassIds": [7110],
       "acClassNames": [ "ferrari_599xxevo", "pagani_zonda_r", "ks_ferrari_fxx_k", "ks_acc_488_challenge" ],
-      "brakeType": "Carbon",
+			"lmuClassNames": [ "Hyper" ],
+			"brakeType": "Ceramic",
       "timesInHundredths": true,
       "enabledMessageTypes": "ALL"
     },
@@ -1174,6 +1179,13 @@
       "allMembersAreRWD": true
     },
     {
+			"carClassEnum": "NASCAR_GEN4",
+			"iracingCarIds": [ 167, 201, 202 ],
+			"timesInHundredths": true,
+			"useAmericanTerms": true,
+			"allMembersAreRWD": true
+		},
+		{
       "carClassEnum": "NASCAR_1987",
       "iracingCarIds": [ 124, 125, 154, 175 ],
       "timesInHundredths": true,
@@ -1203,7 +1215,7 @@
     },
     {
       "carClassEnum": "ARCA",
-      "iracingCarIds": [ 24 ],
+			"iracingCarIds": [ 24, 198, 199, 200 ],
       "timesInHundredths": true,
       "useAmericanTerms": true,
       "allMembersAreRWD": true

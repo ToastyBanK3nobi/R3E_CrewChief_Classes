@@ -187,9 +187,9 @@
     },
     {
       /**R3E-Index: 80**/
-      /**FIA GROUP GT3 & ADAC GT MASTERS 2013-2018, 2020-2021 & ADAC DTM 2021-2024**/
+      /**FIA GROUP GT3 & ADAC GT MASTERS 2013-2018, 2020-2021 & ADAC DTM 2021-2025**/
       "carClassEnum": "GT3",
-      "raceroomClassIds": [ 1703, 2922, 3375, 4516, 7278, 7767, 10396, 10786, 10049, 11566, 10917, 12196, 12770 ],
+      "raceroomClassIds": [ 1703, 2922, 3375, 4516, 7278, 7767, 10396, 10786, 10049, 11566, 10917, 12196, 12770, 13136 ],
       "pCarsClassNames": [ "GT3" ],
       "rf2ClassNames": [ "*GT3*" ],
       "ams2ClassNames": [ "GT3" ],
@@ -205,7 +205,7 @@
       /**Porsche Carrera Cup & Porsche Cayman GT4 Clubsport**/
       /**Without 991.2 cause different Index**/
       "carClassEnum": "CARRERA_CUP",
-      "raceroomClassIds": [ 7982, 8165, 8681, 12015],
+      "raceroomClassIds": [ 7982, 8165, 8681, 12015, 12969],
       "ams2ClassNames": [ "Carrera Cup" ],
       "acClassNames": [ "porsche*cup*" ],
       "iracingCarIds": [ 88, 143 ],
@@ -403,7 +403,7 @@
       "maxSafeOilTemp": 135
     },
     {
-      /**R3E-Index: 78**/
+      /**R3E-Index: 82**/
       /**Praga R1**/
       "carClassEnum": "LMP3",
       "raceroomClassIds": [11055],
@@ -936,7 +936,7 @@
       "allMembersAreFWD": true
     },
     {
-      /**R3E-Index: 187**/
+      /**R3E-Index: 189**/
       /**AUDI TT Cup 2015-2016**/
       "carClassEnum": "AUDI_TT_CUP",
       "raceroomClassIds": [ 4680, 5726 ],
@@ -1640,6 +1640,14 @@
         "enabledMessageTypes": "ALL"
         /**needs Data**/
     },
+	{
+        /** RaceRoom-PI:     29**/
+        "carClassEnum": "Hypercars",
+        "raceroomClassIds":[12003],
+        "timesInHundredths": true,
+        "enabledMessageTypes": "ALL"
+        /**needs Data**/
+    },
     {
         /** RaceRoom-PI:     45**/
         "carClassEnum": "ADAC DTM 2005 & 30 Years of DTM",
@@ -1665,10 +1673,31 @@
         "allMembersAreRWD": true
         /** needs Data**/
     },
+	{
+            
+        /** RaceRoom-PI:     51**/
+        "carClassEnum": "ADAC DTM 2002",
+        "raceroomClassIds":[13264],
+        "brakeType": "Carbon",
+        "maxSafeWaterTemp": 100,
+        "maxSafeOilTemp": 106,
+        "timesInHundredths": true,
+        "enabledMessageTypes": "ALL",
+        "allMembersAreRWD": true
+        /** needs Data**/
+    },
     {
         /** RaceRoom-PI:     73**/
         "carClassEnum": "KTM GTX",
         "raceroomClassIds":[11990],
+        "timesInHundredths": true,
+        "enabledMessageTypes": "ALL"
+        /** needs Data**/
+    },
+	{
+        /** RaceRoom-PI:     95**/
+        "carClassEnum": "KTM GTX",
+        "raceroomClassIds":[7075],
         "timesInHundredths": true,
         "enabledMessageTypes": "ALL"
         /** needs Data**/
@@ -1692,7 +1721,7 @@
         /** needs Data**/
     },
     {
-        /** RaceRoom-PI:     189**/
+        /** RaceRoom-PI:     186**/
         "carClassEnum": "BMW M2 CUP",
         "raceroomClassIds":[10909],
         "timesInHundredths": true,
@@ -1736,5 +1765,13 @@
         "allMembersAreRWD":true
         /** needs Data**/
     },
+	{
+		/** RaceRoom-PI:	210**/
+		"carClassEnum": "Drift Cars",
+		"raceroomClassIds":[1711],
+		"timesInHundredths": true,
+		"allMembersAreRWD": true
+		/**needs Data**/
+	},
   ]
 }
